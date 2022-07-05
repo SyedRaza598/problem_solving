@@ -1,92 +1,22 @@
-let re = /[\W_]/g;
+import isInteger from "./problems/isInt.js";
+import getSecondLargest from "./problems/getSecondLargest.js";
+import checkPalindrome from "./problems/checkPlindrome.js";
+import findProduct from "./problems/productOfNumbers.js";
+import getNumberOfVowels from "./problems/numberOfVowels.js";
 
-const isInteger = (number) => {
-  return Number.isInteger(number);
-};
+let re = /[\W_]/g;
 
 // console.log(isInteger(5.5))
 
-const getSecondLargest = (nums) => {
-  let secondLargest = 0;
-  let largest = 0;
-
-  for (let i = 0; i < nums.length; i++) {
-    if (secondLargest < nums[i]) {
-      secondLargest = largest;
-      largest = nums[i];
-    }
-    if (largest < secondLargest) {
-      largest = secondLargest;
-      secondLargest = i;
-      // secondLargest = largest + secondLargest // 14
-      // largest = secondLargest - largest // 11
-      // secondLargest = secondLargest - largest
-    }
-  }
-
-  return `${largest} ${secondLargest}`;
-};
-
 // console.log(getSecondLargest([11, 3, 5, -23, 73, 96, 12, 109]));
 
-//Find Palindrome
+// console.log(checkPalindrome("never odd or even."));
+// console.log(checkPalindrome("1 eye for of 1 eye."));
+// console.log(checkPalindrome("rotator."));
 
-const checkPalindrome = (str) => {
-  let originalLwrStr = str.replaceAll(re, "").toLowerCase();
-  let removeSpaces = str
-    .toLowerCase()
-    .replaceAll(re, "")
-    .split("")
-    .reverse()
-    .join("");
-  return removeSpaces === originalLwrStr;
-};
+// console.log(findProduct([1, 2, 3, 4]));
 
-// console.log(checkPalindrome('never odd or even.')) //true
-// console.log(checkPalindrome('1 eye for of 1 eye.')) //false
-
-// An array such that each index has a product of all the numbers in the array except the number stored at that index.
-
-/**
- * Input - [1, 2, 3, 4]
- * Output - [24, 12, 8, 6]
- */
-
-const findProduct = (arr) => {
-  const productArray = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    let currentList = [...arr];
-    currentList.splice(i, 1);
-    let sum = currentList.reduce((acc, starter) => acc * starter);
-    productArray.push(sum);
-  }
-
-  return productArray;
-};
-
-// console.log(findProduct([1, 2, 3, 4]))
-
-const getNumberOfVowels = (str) => {
-  let mutatedString = str.toLowerCase().replaceAll(re, "");
-  const isVowel = (char) =>
-    char === "a" ||
-    char === "e" ||
-    char === "i" ||
-    char === "o" ||
-    char === "u";
-  let count = 0;
-
-  for (let i = 0; i < mutatedString.length; i++) {
-    if (isVowel(mutatedString[i])) {
-      count++;
-    }
-  }
-
-  return count;
-};
-
-// console.log(getNumberOfVowels('mbl'))
+// console.log(getNumberOfVowels("his name is jack."));
 
 //Find number of chracter occurances in a string.
 
