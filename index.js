@@ -3,6 +3,7 @@ import getSecondLargest from "./problems/getSecondLargest.js";
 import checkPalindrome from "./problems/checkPlindrome.js";
 import findProduct from "./problems/productOfNumbers.js";
 import getNumberOfVowels from "./problems/numberOfVowels.js";
+import getNumberOfOccurances from "./problems/getNumberOfOccurances.js";
 
 let re = /[\W_]/g;
 
@@ -18,35 +19,9 @@ let re = /[\W_]/g;
 
 // console.log(getNumberOfVowels("his name is jack."));
 
-//Find number of chracter occurances in a string.
-
-const getNumberOfOccurances = (str) => {
-  let alphaNumericStr = str.toLowerCase();
-
-  let occuranceCount = {};
-
-  let maxCharUsed;
-
-  alphaNumericStr.split("").forEach((alpha) => {
-    if (!occuranceCount[alpha]) {
-      occuranceCount[alpha] = 1;
-    } else {
-      occuranceCount[alpha] += 1;
-    }
-  });
-
-  for (let i in occuranceCount) {
-    if (!maxCharUsed) {
-      maxCharUsed = occuranceCount[i];
-    } else if (maxCharUsed < occuranceCount[i]) {
-      maxCharUsed = occuranceCount[i];
-    }
-  }
-
-  return { occuranceCount, maxCharUsed };
-};
-
-// console.log(getNumberOfOccurances('I will be there at 6 o"clock and i will kil you.'))
+console.log(
+  getNumberOfOccurances('I will be there at 6 o"clock and i will kil you.')
+);
 
 const reverseNumber = (num) => {
   let strNum = parseInt(num.toString().split("").reverse().join(""));
@@ -170,3 +145,5 @@ const obj2Fullame = obj.getFullName.bind(obj2);
 let obj2WithFunc = getFullName.bind(obj2);
 
 console.log(obj2Fullame());
+
+console.log(Boolean("false"));
