@@ -4,6 +4,10 @@ import checkPalindrome from "./problems/checkPlindrome.js";
 import findProduct from "./problems/productOfNumbers.js";
 import getNumberOfVowels from "./problems/numberOfVowels.js";
 import getNumberOfOccurances from "./problems/getNumberOfOccurances.js";
+import nextGreaterElement from "./problems/nextGreaterElement.js";
+import reverseNumber from "./problems/reverseNumber.js";
+import mergeTwoSortedArrays from "./problems/mergeTwoSortedArrays.js";
+import checkAnagram from "./problems/checkAnagram.js";
 
 let re = /[\W_]/g;
 
@@ -19,64 +23,17 @@ let re = /[\W_]/g;
 
 // console.log(getNumberOfVowels("his name is jack."));
 
-console.log(
-  getNumberOfOccurances('I will be there at 6 o"clock and i will kil you.')
-);
+// console.log(
+//   getNumberOfOccurances('I will be there at 6 o"clock and i will kil you.')
+// );
 
-const reverseNumber = (num) => {
-  let strNum = parseInt(num.toString().split("").reverse().join(""));
+// console.log(nextGreaterElement([4, 6, 3, 2, 8, 1]));
 
-  return strNum;
-};
+// console.log(reverseNumber(678));
 
-// console.log(reverseNumber(678))
+// console.log(mergeTwoSortedArrays([678, 3, 5, 78], [5, 4, 32, 12]));
 
-const mergeTwoSortedArrays = (arr1, arr2) => {
-  let array1Length = 0;
-  let array2Length = 0;
-  let mergedArray = [];
-  let sorted = false;
-
-  while (array1Length < arr1.length && array2Length < arr2.length) {
-    if (array1Length < arr1.length) {
-      mergedArray.push(arr1[array1Length]);
-      array1Length++;
-    }
-
-    if (array2Length < arr2.length) {
-      mergedArray.push(arr2[array2Length]);
-      array2Length++;
-    }
-  }
-
-  while (!sorted) {
-    sorted = true;
-    for (let i = 1; i < mergedArray.length; i++) {
-      if (mergedArray[i - 1] > mergedArray[i]) {
-        sorted = false;
-        mergedArray[i] = mergedArray[i - 1] + mergedArray[i];
-        mergedArray[i - 1] = mergedArray[i] - mergedArray[i - 1];
-        mergedArray[i] = mergedArray[i] - mergedArray[i - 1];
-      }
-    }
-  }
-
-  return mergedArray;
-};
-
-// console.log(mergeTwoSortedArrays([678, 3, 5, 78], [5, 4, 32, 12]))
-
-const checkAnagram = (msg, anagram) => {
-  let anagramStr = anagram
-    .toLowerCase()
-    .replaceAll(re, "")
-    .split("")
-    .sort()
-    .join("");
-  let msgStr = msg.toLowerCase().replaceAll(re, "").split("").sort().join("");
-  return anagramStr === msgStr;
-};
-// console.log(checkAnagram('Punishment ', 'Nine thumps.'))
+console.log(checkAnagram("Punishment ", "Nine thumps."));
 
 /** Given an array of numbers, return the highest number that can be made out of it */
 
@@ -138,12 +95,12 @@ let obj2 = {
 
 obj.getFullName();
 
-getFullName.apply(obj2, ["Lahore", "Pakistani"]);
+// getFullName.apply(obj2, ["Lahore", "Pakistani"]);
 
 const obj2Fullame = obj.getFullName.bind(obj2);
 
 let obj2WithFunc = getFullName.bind(obj2);
 
-console.log(obj2Fullame());
+// console.log(obj2Fullame());
 
-console.log(Boolean("false"));
+// console.log(Boolean("false"));

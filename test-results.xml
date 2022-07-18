@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0060" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-07-07T14:17:24" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="nextGreaterElement Test" timestamp="2022-07-07T14:17:24" tests="1" file="C:\Users\Designer\Desktop\problem_solving\test\nextGreaterElement.test.js" time="0.0040" failures="1">
+    <testcase name="nextGreaterElement Test should return next greater elements collection" time="0.0010" classname="should return next greater elements collection">
+      <failure message="expected [ 11, -1, 8, 8, 8, -1, -1 ] to deeply equal [ 11, -1, 8, 8, 8, -1, 1 ]" type="AssertionError"><![CDATA[AssertionError: expected [ 11, -1, 8, 8, 8, -1, -1 ] to deeply equal [ 11, -1, 8, 8, 8, -1, 1 ]
+    at Context.<anonymous> (file:///C:/Users/Designer/Desktop/problem_solving/test/nextGreaterElement.test.js:35:49)
+    at processImmediate (node:internal/timers:466:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
